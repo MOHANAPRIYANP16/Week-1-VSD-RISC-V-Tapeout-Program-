@@ -31,7 +31,7 @@
    
 4.[Summary](#summary)  
 
-
+---
 ## Overview  
 This repository demonstrates the **complete RTL design flow** of a 2:1 multiplexer (`good_mux.v`).  
 We go step by step from:  
@@ -139,7 +139,8 @@ This section explains the full Verilog simulation workflow using `good_mux.v` an
 1. **Go** to the folder containing both the design and testbench so that all files are available.  
 2. **Compile** the design and testbench with `iverilog -o` to create an executable simulation file (`good_mux_sim.vvp`).  
 3. **Execute** the simulation using `vvp`, which generates a `.vcd` file (Value Change Dump) that records all signal activities.  
-4. **Open** the `.vcd` file in GTKWave (`gtkwave tb_good_mux.vcd`) to study waveforms and confirm design correctness.  
+4. **Open** the `.vcd` file in GTKWave (`gtkwave tb_good_mux.vcd`) to study waveforms and confirm design correctness.
+   This flow demonstrates the common **Verilog simulation cycle: compile → simulate → analyze → validate**. Following these commands helps maintain clean file management and ensures reliable functional verification of RTL designs.
 --- 
 # synthesis 
 
