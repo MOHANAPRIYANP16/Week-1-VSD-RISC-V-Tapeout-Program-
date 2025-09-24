@@ -11,18 +11,17 @@
 ---
 
 ## 📑 Table of Contents  
-- [Overview](#-overview)  
-- [Simulation Workflow](#-simulation-workflow)  
-- [Verilog Code](#-verilog-code)  
-- [Run Simulation](#-run-simulation)  
-- [View Waveforms](#-view-waveforms)  
-- [Synthesis Workflow](#-synthesis-workflow)  
-- [Outputs](#-outputs)  
-- [Summary](#-summary)  
+- [Overview](#overview)  
+- [Simulation Workflow](#simulation-workflow)  
+- [Verilog Code](#verilog-code)  
+- [Run Simulation](#run-simulation)  
+- [View Waveforms](#view-waveforms)  
+- [Synthesis Workflow](#synthesis-workflow)  
+- [Outputs](#outputs)  
+- [Summary](#summary)  
 
----
 
-## 📌 Overview  
+## Overview  
 This repository demonstrates the **complete RTL design flow** of a 2:1 multiplexer (`good_mux.v`).  
 We go step by step from:  
 1. Writing the design and testbench.  
@@ -31,23 +30,23 @@ We go step by step from:
 
 ---
 
-## 🚀 Simulation Workflow  
+## Simulation Workflow  
 ...
 
-## 💻 Verilog Code  
+##  Verilog Code  
 ...
 
-## ▶️ Run Simulation  
+## Run Simulation  
 ...
 
-## 📊 View Waveforms  
+## View Waveforms  
 ...
 
-## 🏗️ Synthesis Workflow  
+## Synthesis Workflow  
 ...
 
-## 📂 Outputs  
+## Outputs  
 ...
 
-## 📝 Summary  
+## Summary  
 ...
