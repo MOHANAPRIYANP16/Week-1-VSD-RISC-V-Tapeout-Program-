@@ -181,13 +181,13 @@ read_verilog ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files/good_mux.v
 ```
 - `read_verilog`: Reads the Verilog design file.
 
-### 3: Synthesize the top-level module
+### 4: Synthesize the top-level module
 this synthesizing the top-level module, which converts the RTL design into a technology-independent netlist.
 
 ```
 synth -top good_mux
 ```
-### 4. Technology mapping
+### 5. Technology mapping
 dfflibmap: Maps flip-flops to standard cells.
 ```
 dfflibmap -liberty ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
@@ -199,7 +199,7 @@ abc: Optimizes logic and maps it to the technology library.
 abc -liberty ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 
 ```
-### 5. Visualize the gate-level netlist
+### 6. Visualize the gate-level netlist
 
 ```
 show
@@ -210,7 +210,7 @@ show
 
 ![Dot File](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/DAY1/images/show.png)
 
-### 6: Write the Gate-Level Netlist
+### 7: Write the Gate-Level Netlist
 
 ```bash
 write_verilog ~/Labs/good_mux_netlist.v 
@@ -220,7 +220,7 @@ This generates the synthesized gate-level netlist in Verilog format.
 
 ---
 
-### Step 7: Generate Reports
+### 7: Generate Reports
 
 ```bash
 stat
@@ -268,5 +268,5 @@ In this section, we carried out the **RTL-to-gate-level synthesis** of `good_mux
 
 This process illustrates the end-to-end synthesis flow: **read design → synthesize → map → inspect → export netlist → review reports**, confirming functionality and preparing the design for backend steps like placement and routing.  
 
-
+---
 
