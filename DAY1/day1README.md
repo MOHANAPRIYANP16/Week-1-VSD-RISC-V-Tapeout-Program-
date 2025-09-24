@@ -11,15 +11,24 @@
 ---
 
 ## 📑 Table of Contents  
-- [Overview](#overview)  
-- [Simulation](#simulation)
+1. [Overview](#overview)  
+
+2. [Simulation](#simulation)
     - Simulator, Design, Testbench
     - Simulation WorkFlow
     - Compiling and Running good_mux.v
     - Viewing Waveforms in GTKWave
     - Verifying Results
-- [Synthesis Workflow](#synthesis-workflow)  
-- [Summary](#summary)  
+    
+3. [Synthesis Workflow](#synthesis-workflow) 
+    - invoke Yosys
+    - Reading Design and Library
+    - Generic Synthesis and Technology Mapping
+    - Netlist Visualizing 
+    - Writing Gate-Level Netlist
+    - Generating Reports and Area Estimation
+   
+4.[Summary](#summary)  
 
 
 ## Overview  
@@ -47,24 +56,76 @@ We go step by step from:
 4. Run the simulation with **`vvp`**.  
 5. View waveforms in **GTKWave**.
 
-![simulation_workflow](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/008a514609306cd1d7bc3812fa1ff36b4c96e25a/Day1/Images/Example.png)
+![simulation_workflow](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/DAY1/images/SIMULATION.png)
 
 ---
 
-## Lab Simulation & Synthesis
+# Lab Simulation 
 
-The Verilog programs are cloned from the [sky130RTLDesignAndSynthesisWorkshop](https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop/tree/main/verilog_files) repository.  
+ ## Step 1: clone the repository
+ 
+ The Verilog programs are cloned from the sky130RTLDesignAndSynthesisWorkshop repository.
 This repository also contains library files and Yosys run scripts which will help automate synthesis later.
 
-To clone the repository, run:
-```bash
-cd ~/Documents/Verilog  
-# The directory where you want to store the files  
-git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop  
+To clone it  run:
+```
+git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop
+```
+To list the files run :
+```
+cd sky130RTLDesignAndSynthesisWorkshop/verilog_files  
+ls  
+```
+it will see something like :
+
+![ls_png](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/DAY1/images/ls.png)
+
+## Step 2: Stimulate the design 
+ compile the Design and Testbench
+ ```
+iverilog -o good_mux_sim.vvp good_mux.v tb_good_mux.v
+```
+Execute the compiled simulation file with:
+```
+vvp good_mux_sim.vvp
+```
+This runs the simulation and generates a .vcd file (Value Change Dump)
+
+## Step 4: Open the waveform in GTKWave
+  run the vcd file (contains all signal transitions during the simulation) in terminal to view wave forms in gtkwave
+  ```
+   gtkwave tb_good_mux.vcd
+  ``` 
+you will see something like : 
+![good_mux](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/DAY1/images/good_mux.png)
 
 
-## Outputs  
-...
+## verifying Outputs 
+   - Observe the input signals and the corresponding output signals in GTKWave.
+   - Match the output waveform from the gtkwave to the truth table of the 2:1 multiplexer.
+   - ensure all the stimuli are matches well.
+
+## Verilog Code Analysis
+The code for the 2:1 multiplexer (good_mux.v):
+
+```
+module good_mux (
+    input  i0, 
+    input  i1, 
+    input  sel, 
+    output reg y
+);
+always @(*)
+begin
+    if (sel)
+        y <= i1;
+    else 
+        y <= i0;
+end
+endmodule
+```
+
+
 
 ## Summary  
 ...
