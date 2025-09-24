@@ -108,7 +108,7 @@ you will see something like :
 ## Verilog Code Analysis
 The code for the 2:1 multiplexer (good_mux.v):
 
-```
+```verilog
 module good_mux (
     input  i0, 
     input  i1, 
@@ -124,7 +124,10 @@ begin
 end
 endmodule
 ```
-
+## How It Works
+- Inputs: i0, i1 (data), sel (select line)
+- Output: y (registered output)
+- Logic: If selection line (sel) is 1, then output (y) gets input1(i1); if selection line  is 0, output (y) gets input0(i0).
 
 
 ## Summary  
