@@ -37,7 +37,7 @@ This repository demonstrates the **complete RTL design flow** of a 2:1 multiplex
 We go step by step from:  
 1. Writing the design and testbench.  
 2. Simulating with **Icarus Verilog** and analyzing waveforms in **GTKWave**.  
-3. Synthesizing with **Yosys** using the **Sky 130nm standard cell library**.  
+3. Synthesizing with **Yosys** using the **Skywater 130nm standard cell library**.  
 
 ---
 
