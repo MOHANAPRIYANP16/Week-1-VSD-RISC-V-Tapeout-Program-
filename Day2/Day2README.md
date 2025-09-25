@@ -458,7 +458,7 @@ Netlist Dot File :
 ## Various Flip-Flop Coding Styles
 #### 1. Asynchronous Reset Flip-Flops
    
-```
+```verilog
    always @(posedge clk or posedge rst) begin
     if (rst)
         q <= 0;
@@ -471,7 +471,7 @@ end
 - Useful for global reset in ASIC/FPGA designs.
 
 #### 2. Asynchronous Set Flip-Flop.
-```
+```verilog
 always @(posedge clk or posedge set) begin
     if (set)
         q <= 1;
@@ -484,7 +484,7 @@ end
 - Helps initialize signals quickly.
 
 #### 3. Synchronous Reset Flip-Flop.
-```
+```verilog
 always @(posedge clk) begin
     if (rst)
         q <= 0;
@@ -497,7 +497,7 @@ end
 - Keeps all FFs aligned with the clock.
 
 #### 4. Synchronous Set Flip-Flop.
-```
+```verilog
 always @(posedge clk) begin
     if (set)
         q <= 1;
