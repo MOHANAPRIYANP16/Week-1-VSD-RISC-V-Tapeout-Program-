@@ -214,7 +214,7 @@ show
 ### 7: Write the Gate-Level Netlist
 
 ```bash
-write_verilog ~/Labs/good_mux_netlist.v 
+write_verilog good_mux_netlist.v 
 ```
 
 This generates the synthesized gate-level netlist in Verilog format. 
