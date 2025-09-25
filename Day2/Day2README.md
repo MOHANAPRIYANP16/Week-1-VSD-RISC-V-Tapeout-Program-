@@ -100,7 +100,9 @@ A `.lib` (Liberty) file contains detailed definitions of each standard cell, inc
 
 >  By understanding the structure of the `.lib` file , can  perform **accurate synthesis, timing analysis, and power estimation**.
 
-![Timing library](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day2/Images/Timing.lib.png)
+![Timing library](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day2/Images/sky130starting.png)
+
+![Timing library2](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day2/Images/sky130step2.png)
 
 ## 🔧 What is Synthesis?  
 Synthesis is the process of converting **RTL code (Verilog/VHDL)** into a **gate-level netlist** using a standard cell library.  
@@ -143,23 +145,14 @@ This is done using,
 ```bash
 cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
 ```
-This design for multiple modules (verilog)
-```verilog
-module sub_module2 (input a, input b, output y);
-	assign y = a | b;
-endmodule
-
-module sub_module1 (input a, input b, output y);
-	assign y = a&b;
-endmodule
-
-
-module multiple_modules (input a, input b, input c , output y);
-	wire net1;
-	sub_module1 u1(.a(a),.b(b),.y(net1));  //net1 = a&b
-	sub_module2 u2(.a(net1),.b(c),.y(y));  //y = net1|c ,ie y = a&b + c;
-endmodule
+TO view the  design for multiple modules (verilog)
+Run:
 ```
+gedit multiple_modules.v
+```
+See Something Like:
+
+![multiple_modules](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day2/Images/multiple_modules.v.png)
 ## Hierarchical Synthesis Workflow
 
 **Hierarchical synthesis of `multiple_modules.v` using Yosys:**
@@ -171,7 +164,7 @@ endmodule
 yosys
 ```
 #### 2. **Run this command inside yosys:**
-```bash
+```
 read_liberty -lib ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 read_verilog ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files/multiple_modules.v 
 dfflibmap -liberty ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib  
@@ -183,84 +176,18 @@ write_verilog multiple_modules_hier.v
 ```
 ### Verify the synthesis
 #### The Hierarchical Synthesis Workflow :
-![Workflow](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day2/Images/Hierarchical%20Synthesis_workflow.png)
+![Workflow](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day2/Images/hierarchical_synthesis_workflow2.png)
 
 #### Netlist Dot File: : 
 
-![yosys_show_multiple_modules](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day2/Images/multiplemodule.png)
+![yosys_show_multiple_modules](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day2/Images/hierarchical_synthesis_dot_file2.png)
 
 ---
 
 #### Statistics:
 
-<pre>
+![statistics](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day2/Images/statistics2.png)
 
-=== multiple_modules ===
-
-        +----------Local Count, excluding submodules.
-        | 
-        5 wires
-        5 wire bits
-        5 public wires
-        5 public wire bits
-        4 ports
-        4 port bits
-        2 submodules
-        1   sub_module1
-        1   sub_module2
-
-=== sub_module1 ===
-
-        +----------Local Count, excluding submodules.
-        | 
-        3 wires
-        3 wire bits
-        3 public wires
-        3 public wire bits
-        3 ports
-        3 port bits
-        1 cells
-        1   $_AND_
-
-=== sub_module2 ===
-
-        +----------Local Count, excluding submodules.
-        | 
-        3 wires
-        3 wire bits
-        3 public wires
-        3 public wire bits
-        3 ports
-        3 port bits
-        1 cells
-        1   $_OR_
-
-=== design hierarchy ===
-
-        +----------Count including submodules.
-        | 
-        2 multiple_modules
-        1 sub_module1
-        1 sub_module2
-
-        +----------Count including submodules.
-        | 
-       11 wires
-       11 wire bits
-       11 public wires
-       11 public wire bits
-       10 ports
-       10 port bits
-        - memories
-        - memory bits
-        - processes
-        2 cells
-        1   $_AND_
-        1   $_OR_
-        2 submodules
-        1   sub_module1
-        1   sub_module2
-</pre>
 
 > [!TIP]  
 >  Open another terminal for Flat Synthesis
@@ -294,11 +221,11 @@ write_verilog multiple_modules_flat.v
 
 #### Flat synthesis workflow :
 
-![Flat Synthesis Workflow](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day2/Images/flat_workflow.png)
+![Flat Synthesis Workflow](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day2/Images/flat_systhesis_workflow2.png)
 
 #### Netlist Dot File:
 
-![yosys_show_multiple_modules_flat](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day2/Images/Flat_Synthesis_show.png)
+![yosys_show_multiple_modules_flat](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day2/Images/flat_synthesis_dot_file2.png)
 
 #### Statistics
 
@@ -373,7 +300,7 @@ write_verilog multiple_modules_flat.v
 
 ### Comparison 
 
-![Comparison](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day2/Images/comparison.png)
+![Comparison](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day2/Images/comparision2.png)
 
 ## 📊 Hierarchical vs Flat Synthesis  
 
@@ -407,7 +334,17 @@ RTL (Register Transfer Level) designs are typically modular, consisting of multi
 
 ---
 
-##  Commands to Run Sub-Module Synthesis  
+##  Commands to Run Sub-Module Synthesis 
+
+> [!TIP]  
+>  Open another new terminal for Sub-Module Synthesis 
+
+#### 1. **Launch Yosys  & Sub-Module synthesis**
+
+```bash
+yosys
+```
+Then run :
 
 ```bash
 read_liberty -lib ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
@@ -419,11 +356,11 @@ show -format png
 ```
 ## Workflow & Visualization
 
-![Workflow](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day2/Images/Sub-module%20Synthesis_workflow.png)
+![Workflow](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day2/Images/sub_module_workflow2.png)
 
 Netlist Dot File :
 
-![show](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day2/Images/sub_module_show.png)
+![show](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day2/Images/sub_module_dot_file2.png)
 
 #### Statistics 
 
