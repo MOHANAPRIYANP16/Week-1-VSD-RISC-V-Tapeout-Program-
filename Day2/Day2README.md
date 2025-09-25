@@ -72,11 +72,11 @@ Navigate to the library directory and
 You can inspect the contents of the library using a text editor like `vim`, `nano`, or `gedit`, here iam using gedit .
 
 ```bash
-cd ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib
+cd ~/sky130RTLDesignAndSynthesisWorkshop/lib
 ls
 gedit sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
-## 📂 Contents of a `.lib` File  
+## Contents of a `.lib` File  
 
 A `.lib` (Liberty) file contains detailed definitions of each standard cell, including:
 
@@ -141,7 +141,7 @@ In practice, designers often use a **mixed approach**, keeping critical modules 
 The first step is to **locate the file** in your project directory. \
 This is done using,
 ```bash
-cd ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
 ```
 This design for multiple modules (verilog)
 ```verilog
@@ -166,25 +166,20 @@ endmodule
 
 ---
 
-#### 1. **Navigate to the working directory**
-
-```bash
-cd ~/Documents/Verilog/Labs
-```
-#### 2. **Launch Yosys and run hierarchical synthesis**
+#### 1. **Launch Yosys and run hierarchical synthesis**
 ```bash
 yosys
 ```
-#### 3. **Run this command inside yosys:**
+#### 2. **Run this command inside yosys:**
 ```bash
-read_liberty -lib ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-read_verilog ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/verilog_files/multiple_modules.v 
-dfflibmap -liberty ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib  
-abc -liberty ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib  
+read_liberty -lib ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files/multiple_modules.v 
+dfflibmap -liberty ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib  
+abc -liberty ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib  
 synth -top multiple_modules
 show multiple_modules
 show -format png multiple_modules
-write_verilog ~/Documents/Verilog/Labs/multiple_modules_hier.v 
+write_verilog multiple_modules_hier.v 
 ```
 ### Verify the synthesis
 #### The Hierarchical Synthesis Workflow :
@@ -274,26 +269,21 @@ write_verilog ~/Documents/Verilog/Labs/multiple_modules_hier.v
 
 **Flat synthesis of `multiple_modules.v` using Yosys:**
 
-#### 1. **Open the directory where you want to run the synthesis**
 
-```bash
-cd ~/Documents/Verilog/Labs
-```
-
-#### 2. **Launch Yosys and run hierarchical synthesis**
+#### 1. **Launch Yosys and run hierarchical synthesis**
 ```bash
 yosys
 ```
-#### 3. **Run this command inside yosys:**
+#### 2. **Run this command inside yosys:**
 
 ```bash
-read_verilog ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/verilog_files/multiple_modules.v 
+read_verilog ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files/multiple_modules.v 
 synth -top multiple_modules
-abc -liberty ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 flatten
 show multiple_modules
 show -format png multiple_modules
-write_verilog ~/Documents/Verilog/Labs/multiple_modules_flat.v 
+write_verilog multiple_modules_flat.v 
 ```
 **Explanation:**  
 - `synth -top` → generates the gate-level netlist of the flattened design. 
@@ -420,10 +410,10 @@ RTL (Register Transfer Level) designs are typically modular, consisting of multi
 ##  Commands to Run Sub-Module Synthesis  
 
 ```bash
-read_liberty -lib ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-read_verilog ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/verilog_files/multiple_modules.v
+read_liberty -lib ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files/multiple_modules.v
 synth -top sub_module1
-abc -liberty ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 show -format png
 ```
@@ -519,18 +509,18 @@ end
 
 1. Navigate to verilog_files folder:
 ```
-cd Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/verilog_files
-iverilog -o ~/Documents/Verilog/Labs/dff_syncres.vvp dff_syncres.v tb_dff_syncres.v
+cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+iverilog -o dff_syncres.vvp dff_syncres.v tb_dff_syncres.v
 
 ```
-2. Run in Labs folder:
-```
-cd ~/Documents/Verilog/Labs
+2. Run vvp
+
+```bash
 vvp dff_syncres.vvp
 ```
 3. Open waveform in GTKWave:
  ```
-gtkwave tb_dff_syncres.vcd
+   gtkwave tb_dff_syncres.vcd
 ```
 4. Waveform:
 
@@ -544,11 +534,11 @@ yosys
 
 #### 2. **Run this command inside yosys:**
 ```
-read_liberty -lib ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-read_verilog ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/verilog_files/dff_syncres.v
+read_liberty -lib ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files/dff_syncres.v
 synth -top dff_syncres
-dfflibmap -liberty ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-abc -liberty ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+dfflibmap -liberty ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 show -format png
 ```
