@@ -524,20 +524,4 @@ show -format png
 
 ---
 
-##  Workflow (Simulation & Synthesis)  
-
-###  Simulation  
-```bash
-iverilog → vvp → GTKWave
-```
-### Synthesis (Yosys)
-```
-read_liberty → read_verilog → synth → dfflibmap → abc → show
-```
-
-With this flow, you ensure timing accuracy, efficient synthesis, and reliable sequential logic design.
-
-
----
-
 
