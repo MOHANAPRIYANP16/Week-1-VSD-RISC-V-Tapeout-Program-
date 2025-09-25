@@ -29,7 +29,7 @@
     - Writing Gate-Level Netlist
     - Generating Reports and Area Estimation
    
-4.[Summary](#summary)  
+4. [Summary](#summary)  
 
 ---
 ## Overview  
