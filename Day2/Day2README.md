@@ -110,7 +110,7 @@ It maps high-level design into actual logic gates that can be fabricated.
 
 ---
 
-## 🏗️ Types of Synthesis  
+##  Types of Synthesis  
 
 ### 1. Hierarchical Synthesis  
 - Design is kept **module-wise (hierarchical)**.  
@@ -134,7 +134,7 @@ It maps high-level design into actual logic gates that can be fabricated.
 
 ---
 
-✅ **In short:**  
+ **In short:**  
 - **Hierarchical →** Easier to debug, but less optimized.  
 - **Flat →** Highly optimized, but harder to debug/manage.  
 
@@ -314,7 +314,7 @@ write_verilog multiple_modules_flat.v
 | **EDA Tool Effort**| Faster runtime, less memory  | Higher runtime & memory usage  |
 
 
-# 🏗️ Sub-Module Synthesis  
+#  Sub-Module Synthesis  
 
 RTL (Register Transfer Level) designs are typically modular, consisting of multiple functional blocks or sub-modules.  
 **Sub-module level synthesis** allows each sub-module to be synthesized independently.  
