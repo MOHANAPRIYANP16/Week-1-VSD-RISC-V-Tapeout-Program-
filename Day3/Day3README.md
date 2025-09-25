@@ -6,11 +6,21 @@
 - [Constant Propagation](#constant-propagation)  
 - [State Optimization](#state-optimization)  
 - [Cloning](#cloning)  
-- [Retiming](#retiming)  
+- [Retiming](#retiming)
+- [Labs on optimization](#labs-on-Optimization)
+  - [Combinational Logic Optimization](#combinational-logic-optimization)
+     - Labs1
+     - Labs2
+     - Labs3
+     - Labs4 
+  - [Sequential Logic Optimization](#sequential-logic-optimization)
+     - Labs6
+     - Labs7
+  -[summary](#summary)
 
 ---
 
-## 🔹 Constant Propagation  
+## Constant Propagation  
 ### 1. What is it?  
 - Replace signals driven by **constant values (0 or 1)** with fixed logic.  
 - Eliminates unnecessary gates and wires.  
@@ -25,7 +35,7 @@ Constant propagation checks if a net or signal always evaluates to a fixed value
 
 ---
 
-## 🔹 State Optimization  
+## State Optimization  
 ### 1. What is it?  
 - Reduces the number of **states in a finite state machine (FSM)** by merging equivalent or unreachable states.  
 
@@ -39,7 +49,7 @@ In FSMs, some states may be redundant (behaving the same as others) or unreachab
 
 ---
 
-## 🔹 Cloning  
+## Cloning  
 ### 1. What is it?  
 - Duplicate logic or registers to **reduce fanout** and **improve timing**.  
 
@@ -55,7 +65,7 @@ If a single gate or flip-flop drives many loads, the delay increases. Cloning cr
 
 ---
 
-## 🔹 Retiming  
+## Retiming  
 ### 1. What is it?  
 - **Reposition registers (flip-flops)** in a circuit without changing functionality.  
 
@@ -71,7 +81,7 @@ Retiming balances combinational delays by moving flip-flops across logic gates. 
 
 ---
 
-# 5. 🧪 Labs on Optimization
+# 5. Labs on Optimization
 
 Optimization in digital design ensures **minimal area**, **reduced power consumption**, and **improved timing performance**.  
 This lab explores **Combinational** and **Sequential Logic Optimization** techniques.
@@ -274,6 +284,7 @@ exit
 
 
 
+## Summary
 
 
 
