@@ -190,6 +190,8 @@ cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
  ls *dff*
 ```
 
+---
+
 ## Combinational Logic Optimization
 
 ## Lab 1 :
@@ -209,7 +211,7 @@ gedit opt_check.v
 - If a is true, y is assigned the value of b.
 - If a is false, y is 0.
 
-#### 5: lanch yosys:
+#### 5: launch yosys:
 ```
 yosys
 ```
@@ -228,13 +230,15 @@ show
 
 Statistics:
 
-![opt_check1statistics](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day3/Images/statisticsopt1.png)
+
 After view the Dot file :
 run:
 ```
 exit
 # to exit from yosys
 ```
+---
+
 ## Lab2:
 
 #### 1.to see the verilog logic of Lab2.
@@ -252,7 +256,7 @@ Acts as a multiplexer:
 - y = 1 if a is true.
 - y = b if a is false.
 
-#### 2: lanch yosys:
+#### 2: launch yosys:
 ```
 yosys
 ```
@@ -282,6 +286,7 @@ run:
 exit
 # to exit from yosys
 ```
+---
 
 ## Lab 3 :
 
@@ -291,7 +296,7 @@ here the optimization design is `opt_check3`
 
 **The verilog logic of Lab3.**
 
-![opt_check3](opt_check3verilog.png)
+![opt_check3](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day3/Images/opt_check3verilog.png)
 
 Explanation:
 
@@ -304,13 +309,15 @@ y = a ? c : !c
 
 Dot file:
 
-![dot_file](opt_check3_dot_file.png)
+![dot_file](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day3/Images/opt_check3_dot_file.png)
+
+---
 
 ## Lab 4 :
 
 **The verilog logic of Lab4.**
 
-![opt_check4](opt4.verilog.png)
+![opt_check4](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day3/Images/opt4verilog.png)
 
 Functionality:
 
@@ -321,15 +328,19 @@ Functionality:
 - Logic simplifies to:
 - y = a ? c : !c
 
-![opt4](opt4dotfile.png)
+Dot file :
+
+![opt4](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day3/Images/opt4dotfile.png)
 
 ##Sequential Logic Optimization
+
+---
 
 ## Lab 5 :
  
 Verilog code:
  
-![dff_const1](Images/dff_const1verilogfile.v.png)
+![dff_const1](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day3/Images/dff_const1verilogfile.v.png)
 
 **Functionality:**
 
@@ -339,14 +350,14 @@ Verilog code:
 
 Dot file:
 
-![dff1](dffconst1dotfile.png)
+![dff1](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day3/Images/dffconst1dotfile.png)
 
 
 ## Lab 6 :
 
 Verilog code:
 
-![dff2](dffconst2verilog.png)
+![dff2](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day3/Images/dffconst2verilog.png)
 
 ## Functionality of `dff_const2`
 
@@ -363,10 +374,9 @@ The circuit is optimized to:
 
 Dot file :
 
-![dff2](dffconst2dotfile.png)
+![dff2](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day3/Images/dffconst2dotfile.png)
 
-
-## Summary
+---
 
 ##  Summary   
 
