@@ -332,9 +332,9 @@ Dot file :
 
 ![opt4](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day3/Images/opt4dotfile.png)
 
-##Sequential Logic Optimization
-
 ---
+
+## Sequential Logic Optimization
 
 ## Lab 5 :
  
