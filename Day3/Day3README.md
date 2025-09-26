@@ -9,13 +9,13 @@
 - [Retiming](#retiming)
 - [Labs On Optimization](#5-labs-on-optimization)
   - [Combinational Logic Optimization](#combinational-logic-optimization)
-     - [Labs1](#labs1)
-     - [Labs2](#labs2)
-     - [Labs3](#labs3)
-     - [Labs4](#labs4) 
+     - [Labs1](#lab-1)
+     - [Labs2](#lab2)
+     - [Labs3](#lab-3)
+     - [Labs4](#lab-4) 
   - [Sequential Logic Optimization](#sequential-logic-optimization)
-     - [Labs5](#labs6)
-     - [Labs6](#labs6)
+     - [Labs5](#lab-5)
+     - [Labs6](#lab-6)
 
 - [summary](#summary)
 
@@ -79,7 +79,7 @@ Retiming balances combinational delays by moving flip-flops across logic gates. 
 
 ---
 
-# 5. Labs on Optimization
+# 5. Labs On Optimization
 
 Optimization in digital design ensures **minimal area**, **reduced power consumption**, and **improved timing performance**.  
 This lab explores **Combinational** and **Sequential Logic Optimization** techniques.
