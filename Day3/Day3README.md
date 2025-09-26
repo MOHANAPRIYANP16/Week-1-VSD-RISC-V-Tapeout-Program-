@@ -7,16 +7,17 @@
 - [State Optimization](#state-optimization)  
 - [Cloning](#cloning)  
 - [Retiming](#retiming)
-- [Labs on optimization](#labs-on-Optimization)
+- [Labs On Optimization](#5-labs-on-optimization)
   - [Combinational Logic Optimization](#combinational-logic-optimization)
-     - Labs1
-     - Labs2
-     - Labs3
-     - Labs4 
+     - [Labs1](#labs1)
+     - [Labs2](#labs2)
+     - [Labs3](#labs3)
+     - [Labs4](#labs4) 
   - [Sequential Logic Optimization](#sequential-logic-optimization)
-     - Labs6
-     - Labs7
-  -[summary](#summary)
+     - [Labs5](#labs6)
+     - [Labs6](#labs6)
+
+- [summary](#summary)
 
 ---
 
@@ -49,6 +50,7 @@ In FSMs, some states may be redundant (behaving the same as others) or unreachab
 
 ---
 
+
 ## Cloning  
 ### 1. What is it?  
 - Duplicate logic or registers to **reduce fanout** and **improve timing**.  
@@ -60,8 +62,6 @@ If a single gate or flip-flop drives many loads, the delay increases. Cloning cr
 - Reduces **net delay** from high fanout  
 - Improves **timing closure**  
 - Helps achieve **higher operating frequency**
-
-  ![Timing library](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day2/Images/sky130starting.png)
 
 ---
 
@@ -76,8 +76,6 @@ Retiming balances combinational delays by moving flip-flops across logic gates. 
 - Optimizes **critical path delay**  
 - Enables **higher clock frequency**  
 - Balances **pipeline stages** for better performance  
-
- ![Timing library](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day2/Images/sky130starting.png)
 
 ---
 
@@ -104,7 +102,7 @@ If A = 0 → Y = (0 + C)' = C'`
 
 - **Result:**  
 - Complex gate logic → **6 MOS transistors**  
-- Simplified to → **1 inverter (2 MOS transistors)** ✅
+- Simplified to → **1 inverter (2 MOS transistors)** 
 
 ---
 
@@ -192,6 +190,8 @@ cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
  ls *dff*
 ```
 
+## Combinational Logic Optimization
+
 ## Lab 1 :
 
 to see the verilog logic of Lab1.
@@ -219,6 +219,7 @@ read_liberty -lib ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_
 read_verilog opt_check.v
 synth -top opt_check
 opt_clean -purge
+dfflibmap -liberty ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 abc -liberty ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
@@ -232,7 +233,7 @@ After view the Dot file :
 run:
 ```
 exit
-# to exit form yosys
+# to exit from yosys
 ```
 ## Lab2:
 
@@ -261,6 +262,7 @@ read_liberty -lib ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_
 read_verilog opt_check2.v
 synth -top opt_check2
 opt_clean -purge
+dfflibmap -liberty ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 abc -liberty ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
@@ -278,13 +280,120 @@ After view the Dot file :
 run:
 ```
 exit
-# to exit form yosys
+# to exit from yosys
 ```
 
+## Lab 3 :
 
+**The follow before steps  for all process . Just adjust the file name**
+
+here the optimization design is `opt_check3`
+
+**The verilog logic of Lab3.**
+
+![opt_check3](opt_check3verilog.png)
+
+Explanation:
+
+Three inputs (a, b, c), output y.
+Nested ternary logic:
+If a = 1, y = c.
+If a = 0, y = !c.
+Logic simplifies to:
+y = a ? c : !c
+
+Dot file:
+
+![dot_file](opt_check3_dot_file.png)
+
+## Lab 4 :
+
+**The verilog logic of Lab4.**
+
+![opt_check4](opt4.verilog.png)
+
+Functionality:
+
+- Three inputs (a, b, c), output y.
+- Nested ternary logic:
+- If a = 1, y = c.
+- If a = 0, y = !c.
+- Logic simplifies to:
+- y = a ? c : !c
+
+![opt4](opt4dotfile.png)
+
+##Sequential Logic Optimization
+
+## Lab 5 :
+ 
+Verilog code:
+ 
+![dff_const1](Images/dff_const1verilogfile.v.png)
+
+**Functionality:**
+
+- D flip-flop with:
+    - reset to 0
+    - Loads constant 1 when not in reset
+
+Dot file:
+
+![dff1](dffconst1dotfile.png)
+
+
+## Lab 6 :
+
+Verilog code:
+
+![dff2](dffconst2verilog.png)
+
+## Functionality of `dff_const2`
+
+- On **reset** (`posedge reset`): `q` becomes `1`.  
+- On **clock edge** (`posedge clk`): `q` also becomes `1`.  
+- Therefore, output `q` is **always `1`**, independent of clock or reset.
+
+### After Synthesis
+The flip-flop is redundant.  
+The circuit is optimized to:
+
+    assign q = 1'b1;
+
+
+Dot file :
+
+![dff2](dffconst2dotfile.png)
 
 
 ## Summary
+
+##  Summary   
+
+- **Combinational Optimization Techniques:** 
+
+  - **Constant Propagation:** Replaces logic with constants → fewer gates, less power.  
+  - **Boolean Logic Optimization:** Uses K-Map / Quine-McCluskey to simplify expressions.  
+
+- **Sequential Optimization Techniques:** 
+
+  - **State Optimization:** Minimizes FSM states → reduces flip-flops and transitions.  
+  - **Retiming:** Moves registers to balance delay → improves timing.  
+  - **Cloning:** Duplicates logic/registers to reduce fanout → helps timing closure.  
+
+- **Yosys Commands Used:**  
+
+  - `flatten` → Converts hierarchical design into flat design.  
+  - `opt_clean -purge` → Removes unused nets and redundant logic.  
+  - `dfflibmap` / `abc` → Map logic to technology libraries for synthesis.  
+
+- **Lab Outcomes:**  
+  - Optimized designs show reduced **transistor count, logic levels, and area**.  
+  - Some flip-flops collapsed into constants → saving resources.  
+  - Visualized **dot files** confirm simplifications in synthesized netlists.  
+
+ By applying these optimizations, designs become **smaller, faster, and more power-efficient**, ready for real-world VLSI implementation.  
+
 
 
 
