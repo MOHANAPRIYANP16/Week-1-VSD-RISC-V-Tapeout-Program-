@@ -9,13 +9,13 @@
 - [Retiming](#retiming)
 - [Labs On Optimization](#5-labs-on-optimization)
   - [Combinational Logic Optimization](#combinational-logic-optimization)
-     - [Labs1](#lab-1)
+     - [Labs1](#lab-1-)
      - [Labs2](#lab2)
-     - [Labs3](#lab-3)
-     - [Labs4](#lab-4) 
+     - [Labs3](#lab-3-)
+     - [Labs4](#lab-4-) 
   - [Sequential Logic Optimization](#sequential-logic-optimization)
-     - [Labs5](#lab-5)
-     - [Labs6](#lab-6)
+     - [Labs5](#lab-5-)
+     - [Labs6](#lab-6-)
 
 - [summary](#summary)
 
