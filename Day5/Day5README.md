@@ -225,12 +225,12 @@ Dot File:
 
 Dot File:
 
-![alt text](incomp_case_dot_file.png)
+![alt text](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/incomp_case_dot_file.png)
 
 
 ### Bad Case Example (`bad_case.v`)
 
-![badcase](bad_caseverilog.png)
+![badcase](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/bad_caseverilog.png)
 
 **Observation:**
 
@@ -242,13 +242,13 @@ Dot File:
 
 **simulation:**
 
-![badcase](bad_case_gtkwave.png)
+![badcase](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/bad_case_gtkwave.png)
 
 **synthesis:**
 
 Dot File:
 
-![badcase](bad_case_dot_file.png)
+![badcase](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/bad_case_dot_file.png)
 
 ## GLS of Bad case :
 
@@ -259,7 +259,7 @@ Gate-Level Simulation is performed using the synthesized netlist (bad_case_net.v
 
 #### GLS waveform :
 
-![badcase](bad_case_gtkwave-1.png)
+![gls](bad_case_gls.png)
 
 - For sel = 2'b00, y = i0;
 - For sel = 2'b01, y = i1;
