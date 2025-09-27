@@ -8,13 +8,11 @@ This week covers **RTL design, simulation, and optimization** using **Yosys, Ica
 ---
 
 ## 📑 Table of Contents
-1. [Roadmap](#roadmap)  
-2. [Day-Wise Labs](#day-wise-labs)  
-3. [Simulation Workflow](#simulation-workflow)  
-4. [Summary](#summary)  
-5. [Acknowledgements](#acknowledgements)  
-6. [Notes](#notes)  
-7. [Contributor](#contributor)  
+1. [Roadmap](#-roadmap)  
+2. [Day-Wise Labs](#-day-wise-labs)  
+3. [Simulation Workflow](#️-simulation-workflow)  
+4. [Summary](#summary)   
+5. [Contributor](#contributor)  
 
 ---
 
@@ -49,14 +47,17 @@ This week covers **RTL design, simulation, and optimization** using **Yosys, Ica
    gtkwave dump.vcd
 3. Compare results with provided waveforms/screenshots.
 
-Summary
+## Summary
 
-Day 1: RTL basics → Mux, Flip-Flops, testbenches.
+- Day 1: RTL basics → Mux, Flip-Flops, testbenches.
 
-Day 2: Timing libs, coding styles, Hierarchical vs Flat synthesis.
+- Day 2: Timing libs, coding styles, Hierarchical vs Flat synthesis.
 
-Day 3: RTL optimization → propagation, cloning, retiming.
+- Day 3: RTL optimization → propagation, cloning, retiming.
 
-Day 4: Gate-Level Simulation, blocking vs non-blocking, mismatch analysis.
+- Day 4: Gate-Level Simulation, blocking vs non-blocking, mismatch analysis.
 
-Day 5: Synthesis optimization → if-else/case, inferred latches, loops, generate constructs.
+- Day 5: Synthesis optimization → if-else/case, inferred latches, loops, generate constructs.
+
+## Contributor
+Mohanapriyan p
