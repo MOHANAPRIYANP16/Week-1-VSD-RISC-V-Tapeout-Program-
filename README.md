@@ -30,11 +30,11 @@ This week covers **RTL design, simulation, and optimization** using **Yosys, Ica
 
 ## 📂 Day-Wise Labs
 
-- [Day 1 – RTL Design & Synthesis](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day1/README.md)  
-- [Day 2 – Timing, Hierarchy & Flop Styles](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/README.md)  
-- [Day 3 – Combinational & Sequential Optimizations](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day3/README.md)  
-- [Day 4 – GLS & Simulation Mismatches](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/README.md)  
-- [Day 5 – Optimization in Synthesis](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/README.md)  
+- Day 1 – RTL Design & Synthesis
+- Day 2 – Timing, Hierarchy & Flop Styles
+- Day 3 – Combinational & Sequential Optimizations 
+- Day 4 – GLS & Simulation Mismatches
+- Day 5 – Optimization in Synthesis
 
 ---
 
