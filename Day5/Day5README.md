@@ -171,7 +171,7 @@ end
 
 **simulation:**
 
-![if1](incomp_if_gtkwave.png)
+![if1](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/incomp_if_gtkwave.png)
 
 **synthesis:**
 
@@ -180,13 +180,13 @@ end
 
 Dot File
 
-![if1](incomp_if_dot_file.png)
+![if1](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/incomp_if_dot_file.png)
 
 ---
 
 ### Incomplete If-Else (`incomp_if2.v`)
 
-![if2](incomp_if2verilog.png)
+![if2](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/incomp_if2verilog.png)
 
 **Observation:**
 
@@ -198,18 +198,18 @@ Dot File
 
 **simulation:**
 
-![if2](incomp_if2_gtkwave.png)
+![if2](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/incomp_if2_gtkwave.png)
 
 **synthesis:**
 
 Dot File:
 
-![if2](ifcomp_if2_dot_file.png)
+![if2](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/ifcomp_if2_dot_file.png)
 
 
 ### Incomplete Case (`incomp_case.v`)
 
-![incomp1](incomp_caseverilog.png)
+![incomp1](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/incomp_caseverilog.png)
 
 **Observation:**
 
@@ -219,13 +219,13 @@ Dot File:
 
 **simulation:**
 
-![incomp1](incomp_case_gtkwave.png)
+![incomp1](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/incomp_case_gtkwave.png)
 
 **synthesis:**
 
 Dot File:
 
-![incomp1](incomp_case_gtkwave-1.png)
+![alt text](incomp_case_dot_file.png)
 
 
 ### Bad Case Example (`bad_case.v`)
