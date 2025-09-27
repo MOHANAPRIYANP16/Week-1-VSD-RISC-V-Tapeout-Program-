@@ -161,7 +161,7 @@ end
 
 ###  Incomplete If (`incomp_if.v`)
 
-![if1](incom_if_verilog.png)
+![if1](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/incom_if_verilog.png)
 
 **Observation:**
 
@@ -171,7 +171,7 @@ end
 
 **simulation:**
 
-![if1](incomp_gtkwave.png)
+![if1](incomp_if_gtkwave.png)
 
 **synthesis:**
 
