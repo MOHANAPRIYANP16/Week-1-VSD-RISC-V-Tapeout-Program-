@@ -131,7 +131,7 @@ cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
 ```
 **Verilog code**
 
-![verilog](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/ternaryverilog.png)
+![verilog](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/ternary_verilog.png)
 
 #### 2. **Simulation**
 
@@ -167,7 +167,7 @@ show
 ```
 DOt file :
 
-![dot_file](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/ternary_dot_file.png)
+![dot_file](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/ternary_operator_dot_file.png)
 
 ##  Gate-Level Simulation (GLS) of ternary operator MUX
 
@@ -182,7 +182,7 @@ gtkwave tb_ternary_operator_mux.vcd
 
 GTKwave:
 
-![gls](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/ternary_operatorgls2now.png)
+![gls](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/ternary_operator_gls.png)
 
 ## Lab 2
 
@@ -198,7 +198,7 @@ cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
 ```
 gedit bad_mux.v
 ```
-![bad_mux](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/bad_muxverilog.png)
+![bad_mux](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/bad_mux_verilog.png)
 
 ### simulation:
 
@@ -247,7 +247,7 @@ gtkwave tb_bad_mux.vcd
 ```
 GTKwave:
 
-![gls3](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/gls3bad.png)
+![gls3](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/bad_mux_gls.png)
 
 
 ## Lab3: Blocking Assignment Caveat
@@ -266,7 +266,7 @@ gedit blocking_caveat.v
 
 ```
 
-![caveatverilog](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/blocking_caveatverilog.png)
+![caveatverilog](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/blocking_caveat_verilog.png)
 
 **Simulation:**
 ```bash
@@ -279,6 +279,9 @@ gtkwave tb_blocking_caveat.vcd
 > this will save in root
 > and gtkwave also run in root
 
+Gtkwvae :
+
+![blocking_caveat_gtkwave](block_caveat_gtkwave.png)
 
 #### Synthesis of Blocking  Caveat  Using Yosys
 
@@ -311,7 +314,7 @@ gtkwave tb_blocking_caveat.vcd
 ```
 GTKwave:
 
-![glsblocking](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/blocking_caveatgls.png)
+![glsblocking](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/blocking_caveat_gls.png)
 
 ## Summary 
 
