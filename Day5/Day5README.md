@@ -259,7 +259,7 @@ Gate-Level Simulation is performed using the synthesized netlist (bad_case_net.v
 
 #### GLS waveform :
 
-![gls](bad_case_gls.png)
+![gls](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/bad_case_gls.png)
 
 - For sel = 2'b00, y = i0;
 - For sel = 2'b01, y = i1;
@@ -325,17 +325,17 @@ endgenerate
 
 **Verilog Code**
 
-![mux_gen](mux_generate_verilog.png)
+![mux_gen](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/mux_generate_verilog.png)
 
 **Simulation**
 
 _Workflow_ :
 
-![workflowgen](mux_genrate_workflow.png)
+![workflowgen](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/mux_genrate_workflow.png)
 
 _Waveform_ :
 
-![mux_gen](mux_generate_gtkwave2.png)
+![mux_gen](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/mux_generate_gtkwave2.png)
 
 
 - Implements a 4-to-1 multiplexer using a `for` loop.
@@ -352,17 +352,17 @@ _Waveform_ :
 
 **Verilog Code**
 
-![verilog](demux_gen_verilog.png)
+![verilog](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/mux_generate_gtkwave2.png)
 
 **Simulation**
 
 _Workflow_ :
 
-![workflowdemux](demux_workflow.png)
+![workflowdemux](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/demux_workflow.png)
 
 _Waveform_ :
 
-![demux](demux_gtkwave.png)
+![demux](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/demux_gtkwave.png)
 
 - Implements an 8-output demultiplexer using a `for` loop.  
 - Outputs `o0`–`o7` are packed into an 8-bit register `y_int` for easy indexing.  
@@ -390,42 +390,42 @@ _Waveform_ :
 
 RCA (`rca.v`): _8 bit Ripple Carry Adder_
 
-![rca](rca_verilog.png)
+![rca](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/rca_verilog.png)
 
 FA (`fa.v`): _1 bit Full Adder_
 
-![fa](image.png)
+![fa](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/fa.png)
 
 **RTL Simulation**
 
 _Workflow_ :
 
-![workflow](rca_sim_workflow2.png)
+![workflow](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/rca_sim_workflow2.png)
 
 _Waveform_ :
 
-![gtkwave](rca_sim_gtkwave.png)
+![gtkwave](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/rca_sim_gtkwave.png)
 
 
 **Synthesis**
 
 _Workflow_ :
 
-![workflow](rca_workflow.png)
+![workflow](http://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/rca_workflow.png)
 
 _Netlist Dot File_ :
 
-![dot](rca_dot_file.png)
+![dot](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/rca_dot_file.png)
 
 **Gate-Level Simulation**
 
 _Workflow_ :
 
-![workflow](gls_rca_workflow.png)
+![workflow](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/gls_rca_workflow.png)
 
 _Waveform_ :
 
-![gls](gls_rca_gtkwave.png)
+![gls](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day5/Images/gls_rca_gtkwave.png)
 
 Thus, the *RTL Simulation*, *Synthesis*, and *Gate-level simulation* of the **8-bit Ripple Carry Adder** have been successfully completed and verified.
 
