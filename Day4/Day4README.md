@@ -118,3 +118,4 @@ end
 | **Best Suited For**           | Combinational logic                     | Sequential logic (registers/FFs)       |
 | **Hardware Inference**        | Infers combinational gates               | Infers flip-flops / sequential logic   |
 | **Coding Style Example**      | `always @(*) y = a & b;`                 | `always @(posedge clk) q <= d;`        |
+
