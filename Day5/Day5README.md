@@ -434,15 +434,28 @@ Thus, the *RTL Simulation*, *Synthesis*, and *Gate-level simulation* of the **8-
 
 ## Summary
 
-- **If-Else & Case:** Control logic in Verilog; `if-else` handles conditional decisions, while `case` is better for multi-way selection. Missing branches in either can cause **inferred latches**, which hold old values unintentionally.  
-- **Inferred Latches:** Occur when outputs are not assigned in all paths (incomplete `if`, `case`, or partial assignments). Always use `else` or `default` to avoid them.  
-- **For Loops:** Used inside `always` blocks for simulation-time iteration, simplifying repeated assignments.  
-- **Generate For Loops:** Create multiple hardware instances at synthesis time; useful for scalable designs like adders or multiplexers.  
+- **If-Else & Case:**  
+  - `if-else` handles conditional decisions.  
+  - `case` is better for multi-way selection.  
+  - Missing branches can cause **inferred latches** that hold old values unintentionally.  
+
+- **Inferred Latches:**  
+  - Occur when outputs are not assigned in all paths (`if`, `case`, or partial assignments).  
+  - Always include an `else` or `default` to avoid them.  
+
+- **For Loops:**  
+  - Used inside `always` blocks for simulation-time iteration.  
+  - Simplifies repeated assignments (e.g., array operations, shifting, copying).  
+
+- **Generate For Loops:**  
+  - Create multiple hardware instances at **synthesis time**.  
+  - Useful for scalable designs like adders, multiplexers, or registers.  
+
 - **Lab Highlights:**  
   - Incomplete `if`/`case` → inferred latches.  
   - `mux_generate` and `demux_generate` show how `for` loops reduce repetitive code.  
   - 8-bit RCA with `generate for` demonstrates scalable hardware replication.  
 
-Overall, careful use of conditional constructs and loops helps write clean, latch-free, and scalable Verilog code.
-
 ---
+
+ **Conclusion:** Careful use of conditional constructs and loops ensures clean, latch-free, and scalable Verilog code.
