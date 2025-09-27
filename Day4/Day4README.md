@@ -131,7 +131,7 @@ cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
 ```
 **Verilog code**
 
-![verilog](ternaryverilog.png)
+![verilog](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/ternaryverilog.png)
 
 #### 2. **Simulation**
 
@@ -146,7 +146,7 @@ gtkwave tb_ternary_operator_mux.vcd
 ```
 GTKwave:
 
-![gtkwave_ternary_operator](gtkwave_ternary_operator.png)
+![gtkwave_ternary_operator](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/gtkwave_ternary_operator.png)
 
 ##  Synthesis of ternary operator mux Using Yosys
 
@@ -167,7 +167,7 @@ show
 ```
 DOt file :
 
-![dot_file](ternary_dot_file.png)
+![dot_file](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/ternary_dot_file.png)
 
 ##  Gate-Level Simulation (GLS) of ternary operator MUX
 
@@ -182,7 +182,7 @@ gtkwave tb_ternary_operator_mux.vcd
 
 GTKwave:
 
-![gls](ternary_operatorgls2now.png)
+![gls](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/ternary_operatorgls2now.png)
 
 ## Lab 2
 
@@ -198,7 +198,7 @@ cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
 ```
 gedit bad_mux.v
 ```
-![bad_mux](bad_muxverilog.png)
+![bad_mux](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/bad_muxverilog.png)
 
 ### simulation:
 
@@ -212,7 +212,7 @@ then,
 gtkwave tb_bad_mux.vcd
 ```
 
-![gtkwave_bad](gtkwave_bad_mux.png)
+![gtkwave_bad](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/gtkwave_bad_mux.png)
 
 
 #### Synthesis of Bad mux Using Yosys
@@ -233,7 +233,7 @@ show
 ```
 **Dot file:**
 
-![dotfile](bad_mux_dot_file.png)
+![dotfile](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/bad_mux_dot_file.png)
 
 ---
 ## GLS of Bad MUX
@@ -247,7 +247,7 @@ gtkwave tb_bad_mux.vcd
 ```
 GTKwave:
 
-![gls3](gls3bad.png)
+![gls3](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/gls3bad.png)
 
 
 ## Lab3: Blocking Assignment Caveat
@@ -266,7 +266,7 @@ gedit blocking_caveat.v
 
 ```
 
-![caveatverilog](blocking_caveatverilog.png)
+![caveatverilog](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/blocking_caveatverilog.png)
 
 **Simulation:**
 ```bash
@@ -298,7 +298,7 @@ show
 ```
 DOt file:
 
-![blocking dot file](blocking_caveat_dot_file.png)
+![blocking dot file](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/blocking_caveat_dot_file.png)
 
 ## GLS of Blocking  Caveat 
 Gate-Level Simulation is performed using the synthesized netlist (blocking_caveat_net.v). 
@@ -311,7 +311,7 @@ gtkwave tb_blocking_caveat.vcd
 ```
 GTKwave:
 
-![glsblocking](blocking_caveatgls.png)
+![glsblocking](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/blocking_caveatgls.png)
 
 ## Summary 
 
