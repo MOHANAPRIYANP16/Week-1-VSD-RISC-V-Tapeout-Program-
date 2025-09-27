@@ -9,12 +9,13 @@ You’ll also run lab experiments to understand these concepts in practice.
 
 ## 📑 Table of Contents  
 
-1. [If-Else Statements](#1-if-else-statements)  
-2. [Case Statements](#2-case-statements)  
-3. [If-Else with Case](#3-if-else-with-case)  
-4. [If-Else vs Case](#if-else-vs-case)  
-5. [Inferred Latches](#inferred-latches)  
-6. [Labs](#labs)  
+1. [If-Else Statements](#-1-if-else-statements)  
+2. [Case Statements](#-2-case-statements)  
+3. [If-Else with Case](#-3-if-else-with-case)  
+4. [If-Else vs Case](#-if-else-vs-case--comparison)  
+5. [Inferred Latches](#inferred-latches-in-verilog)  
+6. [Labs](#lab) 
+7. [summary](#summary) 
 
 
 ##  Verilog Conditional Constructs
