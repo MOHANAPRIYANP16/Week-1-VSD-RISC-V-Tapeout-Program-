@@ -15,11 +15,11 @@ You’ll explore the theory along with practical insights, followed by hands-on 
 1. [Gate-Level Simulation (GLS)](#1-gate-level-simulation-gls)  
 2. [Synthesis-Simulation Mismatch](#2-synthesis-simulation-mismatch)  
 3. [Blocking vs. Non-Blocking Assignments in Verilog](#3-blocking-vs-non-blocking-assignments-in-verilog)  
-   - [Blocking Statements](#31-blocking-statements)  
-   - [Non-Blocking Statements](#32-non-blocking-statements)  
-   - [Comparison Table](#33-comparison-table)  
-4. [Labs](#4-labs)  
-5. [Summary](#5-summary)  
+   - [Blocking Statements](#blocking-statements-in-verilog-)  
+   - [Non-Blocking Statements](#non-blocking-statements-in-verilog-)  
+   - [Comparison Table](#comparison-table)  
+4. [Labs](#labs)  
+5. [Summary](#summary)  
 
 ---
 
@@ -313,7 +313,15 @@ GTKwave:
 
 ![glsblocking](blocking_caveatgls.png)
 
+## Summary 
 
+- **GLS:** Checks functionality, timing, and testability after synthesis.  
+- **Mismatch:** Happens when RTL sim ≠ gate-level sim; avoid by using synthesizable, clear RTL.  
+- **Blocking (`=`):** Executes step-by-step, used for **combinational logic**.  
+- **Non-Blocking (`<=`):** Executes in parallel at clock edge, used for **sequential logic**.  
+
+> Tip
+> Use `=` for combinational, `<=` for sequential, and always verify with GLS.  
 
 
 
