@@ -281,7 +281,7 @@ gtkwave tb_blocking_caveat.vcd
 
 Gtkwvae :
 
-![blocking_caveat_gtkwave](block_caveat_gtkwave.png)
+![blocking_caveat_gtkwave](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/block_caveat_gtkwave.png)
 
 #### Synthesis of Blocking  Caveat  Using Yosys
 
