@@ -176,7 +176,7 @@ end
 **synthesis:**
 
 > [!Note]
-> follow the [Day4](#day4) steps for synthesis
+> follow the [Day4](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Day4README.md) steps for synthesis
 
 Dot File
 
@@ -255,7 +255,7 @@ Dot File:
 Gate-Level Simulation is performed using the synthesized netlist (bad_case_net.v).
 
 > [!Note]
-> follow the [Day4](#day4) steps for Gate level synthesis
+> follow the [Day4](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Day4README.md) steps for Gate level synthesis
 
 gtkwave :
 
