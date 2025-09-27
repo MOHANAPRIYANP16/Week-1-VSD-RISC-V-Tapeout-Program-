@@ -203,7 +203,7 @@ Run:
 gedit opt_check.v
 ```
 
-![opt_check1](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day3/Images/opt_check.v.png)
+![opt_check2](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day3/Images/opt_check2verilog.png)
 
 #### Explanation:
 
@@ -226,9 +226,7 @@ abc -liberty ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_
 show
 ```
 
-![opt_check1_dotfile](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day3/Images/opt_check_dot_file.png)
-
-Statistics:
+![opt_check2_dotfile](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day3/Images/opt_check2or_dot_file.png)
 
 
 After view the Dot file :
