@@ -320,7 +320,7 @@ GTKwave:
 - **Blocking (`=`):** Executes step-by-step, used for **combinational logic**.  
 - **Non-Blocking (`<=`):** Executes in parallel at clock edge, used for **sequential logic**.  
 
-> Tip
+> [!TIP]
 > Use `=` for combinational, `<=` for sequential, and always verify with GLS.  
 
 
