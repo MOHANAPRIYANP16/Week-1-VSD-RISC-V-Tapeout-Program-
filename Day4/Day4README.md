@@ -32,7 +32,7 @@ You’ll explore the theory along with practical insights, followed by hands-on 
 - Power estimation  
 - Test features (e.g., scan chains for DFT)  
  
-  ![gls](<gls image.png>)
+  ![gls](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/gls%20image.png)
 
 ### 🔹 Why Perform GLS?  
 - **Synthesis Verification:** Confirms that RTL is accurately translated into gates by synthesis tools.  
@@ -118,4 +118,202 @@ end
 | **Best Suited For**           | Combinational logic                     | Sequential logic (registers/FFs)       |
 | **Hardware Inference**        | Infers combinational gates               | Infers flip-flops / sequential logic   |
 | **Coding Style Example**      | `always @(*) y = a & b;`                 | `always @(posedge clk) q <= d;`        |
+
+## Labs 
+
+### Labs1 (ternary_operator_mux)
+
+#### 1. **locate the file** in your project directory. 
+
+This is done using,
+```bash
+cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+**Verilog code**
+
+![verilog](ternaryverilog.png)
+
+#### 2. **Simulation**
+
+Run:
+
+```
+
+iverilog -o ternary_operator_mux_sim.vvp  ternary_operator_mux.v tb_ternary_operator_mux.v
+vvp ternary_operator_mux_sim.vvp 
+gtkwave tb_ternary_operator_mux.vcd
+
+```
+GTKwave:
+
+![gtkwave_ternary_operator](gtkwave_ternary_operator.png)
+
+##  Synthesis of ternary operator mux Using Yosys
+
+### launch yosys :
+
+Run:
+```
+yosys
+```
+then run :
+```bash
+read_liberty -lib ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog ternary_operator_mux.v
+synth -top  ternary_operator_mux
+opt_clean -purge
+abc -liberty ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+DOt file :
+
+![dot_file](ternary_dot_file.png)
+
+##  Gate-Level Simulation (GLS) of ternary operator MUX
+
+Gate-Level Simulation is performed using the synthesized netlist (ternary_operator_mux_net.v). This helps verify the functional correctness of the design after synthesis, using the actual standard cells and any delays (if modeled)
+
+```bash
+iverilog -o ~/a.out ../my_lib/verilog_model/primitives.v  ../my_lib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux_net.v tb_ternary_operator_mux.v
+cd 
+./a.out
+gtkwave tb_ternary_operator_mux.vcd
+```
+
+GTKwave:
+
+![gls](ternary_operatorgls2now.png)
+
+## Lab 2
+
+**Get into the directory:**
+
+run :
+```bash
+cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+
+ verilog file 
+
+```
+gedit bad_mux.v
+```
+![bad_mux](bad_muxverilog.png)
+
+### simulation:
+
+```
+iverilog -o bad_mux_sim.vvp bad_mux.v tb_bad_mux.v
+vvp bad_mux_sim.vvp
+```
+
+then,
+```
+gtkwave tb_bad_mux.vcd
+```
+
+![gtkwave_bad](gtkwave_bad_mux.png)
+
+
+#### Synthesis of Bad mux Using Yosys
+
+```
+yosys
+```
+Inside yosys, run:
+
+```bash
+read_liberty -lib ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog bad_mux.v
+synth -top  bad_mux
+opt_clean -purge
+abc -liberty ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+
+```
+**Dot file:**
+
+![dotfile](bad_mux_dot_file.png)
+
+---
+## GLS of Bad MUX
+Gate-Level Simulation is performed using the synthesized netlist (bad_mux_net.v). 
+
+```bash
+iverilog -o ~/a.out ../my_lib/verilog_model/primitives.v  ../my_lib/verilog_model/sky130_fd_sc_hd.v bad_mux_net.v tb_bad_mux.v
+cd 
+./a.out
+gtkwave tb_bad_mux.vcd
+```
+GTKwave:
+
+![gls3](gls3bad.png)
+
+
+## Lab3: Blocking Assignment Caveat
+
+**Get into the directory:**
+
+run :
+```bash
+cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+
+verilog code for blocking caveat :
+
+```bash
+gedit blocking_caveat.v 
+
+```
+
+![caveatverilog](blocking_caveatverilog.png)
+
+**Simulation:**
+```bash
+iverilog -o blocking_caveat_sim.vvp blocking_caveat.v tb_blocking_caveat.v
+vvp blocking_caveat_sim.vvp
+gtkwave tb_blocking_caveat.vcd
+```
+
+> note
+> this will save in root
+> and gtkwave also run in root
+
+
+#### Synthesis of Blocking  Caveat  Using Yosys
+
+```
+yosys
+```
+Inside yosys, run:
+
+```bash
+read_liberty -lib ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog blocking_caveat.v
+synth -top  blocking_caveat
+opt_clean -purge
+abc -liberty ~/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+
+```
+DOt file:
+
+![blocking dot file](blocking_caveat_dot_file.png)
+
+## GLS of Blocking  Caveat 
+Gate-Level Simulation is performed using the synthesized netlist (blocking_caveat_net.v). 
+
+```bash
+iverilog -o ~/a.out ../my_lib/verilog_model/primitives.v  ../my_lib/verilog_model/sky130_fd_sc_hd.v blocking_caveat_net.v tb_blocking_caveat.v
+cd 
+./a.out
+gtkwave tb_blocking_caveat.vcd
+```
+GTKwave:
+
+![glsblocking](blocking_caveatgls.png)
+
+
+
+
 
