@@ -129,7 +129,12 @@ This is done using,
 ```bash
 cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
 ```
+
 **Verilog code**
+
+```
+gedit ternary_operator_mux.v
+```
 
 ![verilog](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/ternary_verilog.png)
 
@@ -198,6 +203,7 @@ cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
 ```
 gedit bad_mux.v
 ```
+
 ![bad_mux](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/bad_mux_verilog.png)
 
 ### simulation:
