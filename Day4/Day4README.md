@@ -314,7 +314,7 @@ gtkwave tb_blocking_caveat.vcd
 ```
 GTKwave:
 
-![glsblocking](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Images/blocking_caveat_gls.png)
+![blocking gls](blocking_caveat_gls2.png)
 
 ## Summary 
 
