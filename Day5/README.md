@@ -1,1 +1,62 @@
 
+# *Week 1* – VSD RISC-V Tapeout Program ![Simulation & Optimisation](https://img.shields.io/badge/Simulation_%26_Optimisation-done-darkgreen)
+
+📅 `20/09/2025` – `27/09/2025`  
+
+This week covers **RTL design, simulation, and optimization** using **Yosys, Icarus Verilog, GTKWave**, and the **SKY130 PDK**.  
+
+---
+
+## 📑 Table of Contents
+1. [Roadmap](#roadmap)  
+2. [Day-Wise Labs](#day-wise-labs)  
+3. [Simulation Workflow](#simulation-workflow)  
+4. [Summary](#summary)  
+5. [Acknowledgements](#acknowledgements)  
+6. [Notes](#notes)  
+7. [Contributor](#contributor)  
+
+---
+
+## 🛠 Roadmap
+
+| Day   | Topic                     | Key Highlights                          |
+| ----- | ------------------------- | --------------------------------------- |
+| Day 1 | RTL Basics                | Mux, DFF, testbenches                   |
+| Day 2 | Timing & Hierarchy        | Timing libs, Hierarchical vs Flat       |
+| Day 3 | RTL Optimizations         | Constant propagation, Retiming, Cloning |
+| Day 4 | Gate-Level Simulation     | Blocking vs Non-blocking, Mismatches    |
+| Day 5 | Synthesis Optimizations   | If-else, Case, Latches, Loops, Generate |
+
+---
+
+## 📂 Day-Wise Labs
+
+- [Day 1 – RTL Design & Synthesis](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day1/README.md)  
+- [Day 2 – Timing, Hierarchy & Flop Styles](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/README.md)  
+- [Day 3 – Combinational & Sequential Optimizations](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day3/README.md)  
+- [Day 4 – GLS & Simulation Mismatches](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/README.md)  
+- [Day 5 – Optimization in Synthesis](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/README.md)  
+
+---
+
+## ⚙️ Simulation Workflow
+1. Go to the respective **Day X** folder.  
+2. Compile RTL/netlist with:  
+   ```bash
+   iverilog design.v tb.v -o sim.out
+   vvp sim.out
+   gtkwave dump.vcd
+3. Compare results with provided waveforms/screenshots.
+
+Summary
+
+Day 1: RTL basics → Mux, Flip-Flops, testbenches.
+
+Day 2: Timing libs, coding styles, Hierarchical vs Flat synthesis.
+
+Day 3: RTL optimization → propagation, cloning, retiming.
+
+Day 4: Gate-Level Simulation, blocking vs non-blocking, mismatch analysis.
+
+Day 5: Synthesis optimization → if-else/case, inferred latches, loops, generate constructs.
