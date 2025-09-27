@@ -176,7 +176,7 @@ end
 **synthesis:**
 
 > [!Note]
-> follow the [Day4](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Day4README.md) steps for synthesis
+> follow the [Day4](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Day4README.md#labs) steps for synthesis
 
 Dot File
 
@@ -255,14 +255,193 @@ Dot File:
 Gate-Level Simulation is performed using the synthesized netlist (bad_case_net.v).
 
 > [!Note]
-> follow the [Day4](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Day4README.md) steps for Gate level synthesis
+> follow the [Day4](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/blob/main/Day4/Day4README.md#labs) steps for Gate level synthesis
 
-gtkwave :
+#### GLS waveform :
 
 ![badcase](bad_case_gtkwave-1.png)
 
+- For sel = 2'b00, y = i0;
+- For sel = 2'b01, y = i1;
+- For sel = 2'b10, y = i2;
+- sel = 2'b11 is commented out, so for this value y is not assigned, causing a latch to be inferred in RTL Simulation.
+- But this inferred latch is corrected in simulation as seen in the GLS Waveform
 
 
+## Verilog Looping Constructs: `for` Loop & `generate for` Loop
+
+---
+
+### 1. `for` Loop
+
+- **Purpose:** Executes a block of statements multiple times inside an `always` block.  
+- **Use Case:** Iterative assignments in **combinational or sequential logic**.
+
+**Syntax:**
+```verilog
+always @(*) begin
+    integer i;
+    for (i = 0; i < N; i = i + 1) begin
+        array[i] = input_signal[i];
+    end
+end
+```
+
+- **Observation:**  
+  - Executes **during simulation**, not synthesis-time replication.  
+  - Loop index must be an **integer**.  
+  - Useful for operations like summing arrays, shifting, or copying signals.
+
+---
+
+### 2. `generate for` Loop
+
+- **Purpose:** Used at **compile/synthesis time** to generate multiple instances of modules or repeated RTL structures.
+- **Usage:** Creates hardware replication, like multiple adders, flip-flops, or gates.
+
+**Syntax:**
+```verilog
+genvar i;
+generate
+    for (i = 0; i < N; i = i + 1) begin : loop_label
+        my_module u_inst (
+            .in(signal_in[i]),
+            .out(signal_out[i])
+        );
+    end
+endgenerate
+```
+
+- **Observation:**  
+  - Executes **at synthesis/compile time**, producing multiple hardware instances.  
+  - `genvar` is required for the loop index.  
+  - Commonly used for arrays of registers, multiplexers, or replicated modules like **Ripple Carry Adders (RCA)**.
+
+---
+
+## Labs on `for` loop
+
+## `mux_generate.v`
+
+**Verilog Code**
+
+![mux_gen](mux_generate_verilog.png)
+
+**Simulation**
+
+_Workflow_ :
+
+![workflowgen](mux_genrate_workflow.png)
+
+_Waveform_ :
+
+![mux_gen](mux_generate_gtkwave2.png)
 
 
+- Implements a 4-to-1 multiplexer using a `for` loop.
+- Inputs `i0`–`i3` are packed into a 4-bit wire `i_int` for indexing.
+- Loop iterates over indices 0 to 3 inside an `always` block.
+- Assigns `y = i_int[k]` when `k` matches the select signal `sel`.
+- Only the selected input is passed to the output.
+- Avoids multiple nested `if-else` or `case` statements, making code concise.
 
+---
+
+
+## `demux_generate.v`
+
+**Verilog Code**
+
+![verilog](demux_gen_verilog.png)
+
+**Simulation**
+
+_Workflow_ :
+
+![workflowdemux](demux_workflow.png)
+
+_Waveform_ :
+
+![demux](demux_gtkwave.png)
+
+- Implements an 8-output demultiplexer using a `for` loop.  
+- Outputs `o0`–`o7` are packed into an 8-bit register `y_int` for easy indexing.  
+- `y_int` is initialized to 0, then only the bit matching `sel` is set to input `i`.  
+- Routes the single input `i` to the selected output while others remain 0.  
+- Loop executes sequentially during simulation; no latches are inferred.  
+- Provides a concise alternative to multiple if-else or case statements.
+
+---
+
+## Labs on `generate for` loop
+
+## 8-bit Ripple Carry Adder (RCA)
+
+- An RCA is built by cascading multiple **full adders**.  
+- Each full adder adds two input bits along with a carry-in, producing a sum and a carry-out.  
+- In an 8-bit RCA, the carry-out of each stage is passed as the carry-in to the next stage.  
+- The first adder takes an external carry-in (usually 0), and the final adder produces the overall carry-out.
+- The `generate for` loop instantiates one full adder per bit, automatically chaining the carry-out of stage *k* to the carry-in of stage *k+1*.  
+- This makes the code **shorter, scalable, and less error-prone**, especially for larger adders (e.g., 16-bit, 32-bit).  
+- Only the loop index changes for each stage, while the wiring of sum and carry is handled systematically.  
+- If you change the bit-width (say from 8 to 16), only the loop limit needs updating.
+
+**Verilog Code**
+
+RCA (`rca.v`): _8 bit Ripple Carry Adder_
+
+![rca](rca_verilog.png)
+
+FA (`fa.v`): _1 bit Full Adder_
+
+![fa](image.png)
+
+**RTL Simulation**
+
+_Workflow_ :
+
+![workflow](rca_sim_workflow2.png)
+
+_Waveform_ :
+
+![gtkwave](rca_sim_gtkwave.png)
+
+
+**Synthesis**
+
+_Workflow_ :
+
+![workflow](rca_workflow.png)
+
+_Netlist Dot File_ :
+
+![dot](rca_dot_file.png)
+
+**Gate-Level Simulation**
+
+_Workflow_ :
+
+![workflow](gls_rca_workflow.png)
+
+_Waveform_ :
+
+![gls](gls_rca_gtkwave.png)
+
+Thus, the *RTL Simulation*, *Synthesis*, and *Gate-level simulation* of the **8-bit Ripple Carry Adder** have been successfully completed and verified.
+
+---
+
+## Summary
+
+- **If-Else & Case:** Control logic in Verilog; `if-else` handles conditional decisions, while `case` is better for multi-way selection. Missing branches in either can cause **inferred latches**, which hold old values unintentionally.  
+- **Inferred Latches:** Occur when outputs are not assigned in all paths (incomplete `if`, `case`, or partial assignments). Always use `else` or `default` to avoid them.  
+- **For Loops:** Used inside `always` blocks for simulation-time iteration, simplifying repeated assignments.  
+- **Generate For Loops:** Create multiple hardware instances at synthesis time; useful for scalable designs like adders or multiplexers.  
+- **Lab Highlights:**  
+  - Incomplete `if`/`case` → inferred latches.  
+  - `mux_generate` and `demux_generate` show how `for` loops reduce repetitive code.  
+  - 8-bit RCA with `generate for` demonstrates scalable hardware replication.  
+
+Overall, careful use of conditional constructs and loops helps write clean, latch-free, and scalable Verilog code.
+
+---
