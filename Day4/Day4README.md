@@ -31,6 +31,8 @@ You’ll explore the theory along with practical insights, followed by hands-on 
 - Timing correctness  
 - Power estimation  
 - Test features (e.g., scan chains for DFT)  
+ 
+  ![gls](<gls image.png>)
 
 ### 🔹 Why Perform GLS?  
 - **Synthesis Verification:** Confirms that RTL is accurately translated into gates by synthesis tools.  
