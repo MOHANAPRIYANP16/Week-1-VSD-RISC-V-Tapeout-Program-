@@ -30,11 +30,11 @@ This week covers **RTL design, simulation, and optimization** using **Yosys, Ica
 
 ## 📂 Day-Wise Labs
 
-- Day 1 – RTL Design & Synthesis
-- Day 2 – Timing, Hierarchy & Flop Styles
-- Day 3 – Combinational & Sequential Optimizations 
-- Day 4 – GLS & Simulation Mismatches
-- Day 5 – Optimization in Synthesis
+- Day 1 – [RTL Design & Synthesis](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/tree/main/DAY1)
+- Day 2 – [Timing, Hierarchy & Flop Styles](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/tree/main/Day2)
+- Day 3 – [Combinational & Sequential Optimizations](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/tree/main/Day3)
+- Day 4 – [GLS & Simulation Mismatches](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/tree/main/Day4)
+- Day 5 – [Optimization in Synthesis](https://github.com/MOHANAPRIYANP16/Week-1-VSD-RISC-V-Tapeout-Program-/tree/main/Day5)
 
 ---
 
