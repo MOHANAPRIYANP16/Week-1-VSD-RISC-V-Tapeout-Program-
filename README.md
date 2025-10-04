@@ -60,4 +60,7 @@ This week covers **RTL design, simulation, and optimization** using **Yosys, Ica
 - Day 5: Synthesis optimization → if-else/case, inferred latches, loops, generate constructs.
 
 ## Contributor
-Mohanapriyan p
+Mohanapriyan p [linkedin](https://www.linkedin.com/in/mohanapriyan-p-b94962325/)
+
+---
+
